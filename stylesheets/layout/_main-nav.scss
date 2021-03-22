@@ -1,0 +1,28 @@
+.main-nav {
+  display: flex;
+  width: 100%;
+  font-family: 'Russo One', sans-serif;
+  letter-spacing: 5px;
+  justify-content: center;
+  place-items: center;
+  height: 100px;
+  background: $dark-color;
+  color: $light-color;
+  font-size: 3rem;
+  .site-desc {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    list-style: none;
+    padding-right: 0.2rem;
+  }
+  @include mq($until: wide) {
+    font-size: 2rem;
+    letter-spacing: normal;
+  }
+  @include mq($until: mobile) {
+    font-size: 1rem;
+    letter-spacing: normal;
+  }
+}

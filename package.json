@@ -1,0 +1,15 @@
+{
+  "name": "chuckjokesapi",
+  "version": "1.0.0",
+  "description": "random joke generator",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sass": "node-sass -w stylesheets/ -o dist/css/"
+  },
+  "author": "",
+  "license": "ISC"
+}

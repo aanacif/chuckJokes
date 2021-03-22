@@ -1,0 +1,12 @@
+.content-wrap {
+  margin: 0 1rem;
+  padding-bottom: 5rem;
+  p {
+    text-align: center;
+  }
+  p {
+    @include mq($until: desktop) {
+      font-size: 1rem;
+    }
+  }
+}

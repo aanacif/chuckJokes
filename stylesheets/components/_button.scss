@@ -1,0 +1,94 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.customName {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  place-items: center;
+  #firstName,
+  #lastName {
+    margin: 1rem;
+  }
+  .firstName,
+  .lastName {
+    padding: 1rem;
+  }
+  @include mq($until: desktop) {
+    font-size: 1rem;
+    flex-direction: column;
+    .firstName,
+    .lastName {
+      padding: 0;
+    }
+    #firstName,
+    #lastName {
+      margin: 0;
+    }
+  }
+}
+.pickNumber {
+  display: grid;
+  padding-top: 1rem;
+  place-items: center;
+  #number {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .greater {
+    font-size: 0.75rem;
+    color: red;
+  }
+}
+
+.get-jokes {
+  display: inline-block;
+  height: 3rem;
+  min-width: 40vw;
+  margin-bottom: 1rem;
+
+  color: $light-color;
+  background-color: $bg-dark-color;
+  font-weight: 900;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid $dark-color;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 250ms ease;
+  @include mq($until: desktop) {
+    font-size: 1rem;
+  }
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.431) 0px 10px 10px;
+  }
+}
+
+.jokeList {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    padding: 1rem;
+    margin: 0 auto;
+    &:nth-child(odd) {
+      color: $medium-color;
+    }
+    &:nth-child(even) {
+      color: $dark-color;
+    }
+    &:last-child {
+      padding-bottom: 2rem;
+    }
+
+    @include mq($until: desktop) {
+      font-size: 1rem;
+    }
+    @include mq($until: mobile) {
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+  }
+}
