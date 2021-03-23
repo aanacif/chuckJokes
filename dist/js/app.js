@@ -7,7 +7,6 @@ function getJokes(e) {
   const lastName = document.getElementById('lastName').value;
   // create new request object
   const api = new XMLHttpRequest();
-
   // send request  
   if (number > 0) {
     if (firstName && lastName) {
@@ -18,12 +17,11 @@ function getJokes(e) {
   } else {
     alert('Number must be greather than 0');
   }
-
   // handle request  
   api.onload = function () {
     // checking if response is successful (200)
     if (api.status === 200) {
-      // turn raw data into object
+      // turn raw data into object using JSON.parse
       const result = JSON.parse(this.responseText);
       let jokeList = '';
       if (result.type == 'success') {
@@ -31,7 +29,7 @@ function getJokes(e) {
           jokeList += `<li>${joke.joke}</li>`;
         });
       } else {
-        jokeList += '<li>Error</li>';
+        jokeList += '<li>Error: Chuck too str0nk</li>';
       }
       document.querySelector('.jokeList').innerHTML = jokeList;
     }
