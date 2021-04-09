@@ -421,7 +421,7 @@ footer .main-footer {
 .main-nav {
   display: flex;
   width: 100%;
-  font-family: 'Russo One', sans-serif;
+  font-family: "Russo One", sans-serif;
   letter-spacing: 5px;
   justify-content: center;
   place-items: center;
@@ -432,17 +432,22 @@ footer .main-footer {
   .main-nav .site-desc {
     padding: 0;
     margin: 0; }
-  .main-nav li {
-    list-style: none;
-    padding-right: 0.2rem; }
+    .main-nav .site-desc li {
+      list-style: none;
+      padding-right: 0.2rem; }
   @media (max-width: 81.24em) {
     .main-nav {
       font-size: 2rem;
       letter-spacing: normal; } }
   @media (max-width: 37.49em) {
     .main-nav {
-      font-size: 1rem;
-      letter-spacing: normal; } }
+      font-size: 2.1rem;
+      letter-spacing: normal;
+      text-align: center; } }
+
+@media (max-width: 37.49em) {
+  #number {
+    width: 30vw; } }
 
 .content-wrap {
   margin: 0 1rem;
@@ -482,8 +487,8 @@ footer .main-footer {
   #pickNumber #number {
     margin-bottom: 1rem;
     text-align: center; }
-  #pickNumber .jokeCategory {
-    margin-bottom: 1rem; }
+  #pickNumber .number {
+    font-size: 1rem; }
 
 #get-jokes {
   display: inline-block;
