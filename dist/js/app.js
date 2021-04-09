@@ -11,19 +11,40 @@ const button = document.querySelector('#get-jokes')
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
-    startLoader(button)
-    API.get(`/jokes/random/${entry.value}`).then(data => {
-        let generateList = ''
-        data.value.forEach(element => {
-            generateList += `<li>${element.joke}</li>`
-        });
-        jokeList.innerHTML = generateList
-    })
-        .finally(() => {
-            stopLoader(button, "GENERATE");
-        })
-})
+    if (entry.value > 0) {
+        startLoader(button)
+        let cats = document.querySelectorAll('input[type=checkbox]:checked')
 
+        if (cats.length > 0) {
+            let catArray = []
+            cats.forEach(item => {
+                catArray.push(item.name)
+            })
+            API.get(`/jokes/random/${entry.value}?limitTo=${catArray}`).then(data => {
+                let generateList = ''
+                data.value.forEach(element => {
+                    generateList += `<li>${element.joke}</li>`
+                });
+                jokeList.innerHTML = generateList
+            })
+                .finally(() => {
+                    stopLoader(button, "GENERATE");
+                })
+            return
+        }
+
+        API.get(`/jokes/random/${entry.value}`).then(data => {
+            let generateList = ''
+            data.value.forEach(element => {
+                generateList += `<li>${element.joke}</li>`
+            });
+            jokeList.innerHTML = generateList
+        })
+            .finally(() => {
+                stopLoader(button, "GENERATE");
+            })
+    }
+})
 
 // Informational responses (100–199)
 // Successful responses (200–299)
