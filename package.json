@@ -11,5 +11,13 @@
     "sass": "node-sass -w stylesheets/ -o dist/css/"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aanacif/chuckJokes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aanacif/chuckJokes/issues"
+  },
+  "homepage": "https://github.com/aanacif/chuckJokes#readme"
 }
