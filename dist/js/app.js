@@ -7,10 +7,14 @@ const form = document.querySelector('#pickNumber')
 const jokeList = document.querySelector('#jokeList')
 const entry = document.querySelector('#number')
 const button = document.querySelector('#get-jokes')
+const ticks = document.querySelector('#ticks')
+
+
 
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
+    let startTime = performance.now();
     if (entry.value > 0) {
         startLoader(button)
         let cats = document.querySelectorAll('input[type=checkbox]:checked')
@@ -25,11 +29,13 @@ form.addEventListener('submit', (event) => {
                 data.value.forEach(element => {
                     generateList += `<li>${element.joke}</li>`
                 });
+                ticks.innerHTML = `List generated in: ${Math.round(performance.now() - startTime)} ms`
                 jokeList.innerHTML = generateList
             })
                 .finally(() => {
                     stopLoader(button, "GENERATE");
                 })
+
             return
         }
 
@@ -38,6 +44,8 @@ form.addEventListener('submit', (event) => {
             data.value.forEach(element => {
                 generateList += `<li>${element.joke}</li>`
             });
+            let endTime = performance.now()
+            ticks.innerHTML = `List generated in: ${Math.round(performance.now() - startTime)} ms`
             jokeList.innerHTML = generateList
         })
             .finally(() => {
@@ -45,9 +53,3 @@ form.addEventListener('submit', (event) => {
             })
     }
 })
-
-// Informational responses (100–199)
-// Successful responses (200–299)
-// Redirects (300–399)
-// Client errors (400–499)
-// Server errors (500–599)

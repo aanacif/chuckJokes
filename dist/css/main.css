@@ -495,6 +495,11 @@ footer .main-footer {
   #categories input[type="checkbox"] {
     transform: scale(1.2); }
 
+#ticks {
+  font-size: 0.75rem;
+  text-align: center;
+  color: #00303f; }
+
 #get-jokes {
   display: inline-block;
   height: 3rem;
