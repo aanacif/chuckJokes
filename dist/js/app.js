@@ -11,7 +11,7 @@ const ticks = document.querySelector('#ticks')
 
 
 
-
+performance
 form.addEventListener('submit', (event) => {
     event.preventDefault()
     let startTime = performance.now();
@@ -35,7 +35,6 @@ form.addEventListener('submit', (event) => {
                 .finally(() => {
                     stopLoader(button, "GENERATE");
                 })
-
             return
         }
 
