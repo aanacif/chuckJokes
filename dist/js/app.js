@@ -43,7 +43,6 @@ form.addEventListener('submit', (event) => {
             data.value.forEach(element => {
                 generateList += `<li>${element.joke}</li>`
             });
-            let endTime = performance.now()
             ticks.innerHTML = `List generated in: ${Math.round(performance.now() - startTime)} ms`
             jokeList.innerHTML = generateList
         })
