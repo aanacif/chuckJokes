@@ -8,10 +8,16 @@ const jokeList = document.querySelector('#jokeList')
 const entry = document.querySelector('#number')
 const button = document.querySelector('#get-jokes')
 const ticks = document.querySelector('#ticks')
+const intro = document.querySelector('#intro')
 
+API.get(`/jokes/random/`).then(data => {
+    let introQuote = ''
+    Object.values(data).forEach(element => {
+        introQuote = `<li>"${element.joke}"</li>`
+    });
+    intro.innerHTML = introQuote
+})
 
-
-performance
 form.addEventListener('submit', (event) => {
     event.preventDefault()
     let startTime = performance.now();

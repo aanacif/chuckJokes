@@ -7,11 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="This is a Chuck Norris random jokes generator website">
   <meta name="google-site-verification" content="f3i5NLTX2aaODXSLb6ohXkBjWD20qe5keZt2riAA4-w" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-    crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Zilla+Slab+Highlight&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="icon" href="favicon.ico">
   <title>Chuck Norris Jokes</title>
@@ -29,15 +27,16 @@
   <div class="home-container">
 
     <div class="content-wrap">
-      <p>Hey everybody, Chuck Norris is here.</p>
-      <p>Choose the amount of jokes you want and a random list will be displayed everytime you click the
-        "GENERATE" button.</p>
-      <p>Have fun!</p>
+      <div id="intro"></div>
+      <p>Step 1. Select amount of jokes</p>
+      <p>Step 2. (Optional) Select a category</p>
+      <p>Step 3. Click the "GENERATE" button.</p>
+
 
       <form id="pickNumber">
         <label for="number" class="number">List size (# of jokes)</label>
         <input id="number" type="number" min="1" max="99">
-        <p>This is optional, but you can also select a category:</p>
+        <p>Categories:</p>
         <div id="categories">
           <input id="nerdy" name="nerdy" type="checkbox" class="category"> Nerdy
           <input id="explicit" name="explicit" type="checkbox" class="category"> Explicit
@@ -65,6 +64,7 @@
   </div>
 
   <script type="module" src="./js/app.js"></script>
+
 
 </body>
 
