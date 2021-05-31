@@ -4,6 +4,12 @@
   p {
     text-align: center;
   }
+  .steps {
+    font-size: 2rem;
+    @include mq($until: desktop) {
+      font-size: 1rem;
+    }
+  }
   p {
     @include mq($until: desktop) {
       font-size: 1rem;
