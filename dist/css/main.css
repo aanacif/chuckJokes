@@ -488,6 +488,9 @@ footer .main-footer {
     color: red;
     font-size: 0.75rem;
     margin-bottom: 1rem; }
+    @media (max-width: 56.24em) {
+      #pickNumber .info {
+        display: none; } }
 
 #categories {
   margin-bottom: 1rem; }
