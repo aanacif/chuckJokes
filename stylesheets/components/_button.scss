@@ -30,6 +30,9 @@
     color: red;
     font-size: 0.75rem;
     margin-bottom: 1rem;
+    @include mq($until: desktop) {
+      display: none;
+    }
   }
 }
 
